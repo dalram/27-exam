@@ -1,6 +1,18 @@
-# Getting Started with Create React App
+# BIT exam App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Logins to the project
+
+In the project directory, you can run:
+
+Admin login: 
+Name: admin
+Password: 123
+
+Customer login:
+Name: customer
+Password: 123
 
 ## Available Scripts
 

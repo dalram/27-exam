@@ -1,0 +1,467 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.nav{
+  background-color: aliceblue;
+  .nav-link {
+    text-decoration: none;
+    color: black;
+    margin: 0 20px;
+  }
+}
+
+body {
+  font-family: 'Oswald', sans-serif;
+}
+
+.list-group-item {
+  .item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      .content {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          .box {
+              width: 15px;
+              height: 15px;
+              border: 1px solid coral;
+              margin: 0 10px;
+          }
+          .cat {
+              font-size: 75%;
+              color: skyblue;
+              text-decoration: underline;
+              margin: 0 0 0 40px;
+              cursor: pointer;
+          }
+      }
+      .nest-content {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          li {
+              background-color: aliceblue;
+              color: pink;
+          }
+      }
+      .buttons {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+      }
+      b {
+          margin-right: 7px;
+      }
+      i {
+          margin-left: 7px;
+      }
+      u {
+          margin-left: 7px;
+          color: skyblue;
+      }
+      &.front {
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
+          flex-direction: column;
+          .comments {
+              margin: 10px 0;
+              padding: 10px;
+              border: 1px solid pink;
+              border-radius: 5px;
+              width: 100%;
+              h5 {
+                  color: pink;
+                  width: 20px;
+              }
+              p {
+                  width: 80px;
+              }
+          }
+      }
+  }
+}
+.margin-bot {
+  margin-bottom: 10px;
+}
+.list-group-item {
+  .item-front {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      .content {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+      }
+      .form-group {
+          width: 100%;
+          
+      }
+      
+      textarea {
+          width: 100%;
+      }
+      .nest-content {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          li {
+              background-color: aliceblue;
+              color: pink;
+          }
+      }
+      .buttons {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+      }
+      b {
+          margin-right: 7px;
+      }
+      i {
+          margin-left: 7px;
+      }
+      u {
+          margin-left: 7px;
+          color: skyblue;
+      }
+  }
+}
+
+.modal {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.show-message {
+  display: flex;
+  position: absolute;
+  bottom: 50px;
+  right: 0;
+  width: 100%;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 3;
+  .alert-danger {
+      background-color: #f8d7dac2;
+  }
+  .alert-info {
+      background-color: #d1ecf1c2;
+  }
+  .alert-success {
+      background-color: #d4eddac2;
+  }
+  div {
+      width: 50%;
+      margin-right: 30px;
+  }
+}
+
+button.with-loader {
+  .spinner-border {
+      display: none;
+  }
+}
+
+button.with-loader:disabled {
+  .spinner-border {
+      display: inline-block;
+  }
+}
+
+.photo-bin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  max-width: 150px;
+  img {
+      width: 100%;
+      height: auto;
+  }
+}
+.create-box {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+}
+.create-form {
+  display: flex;
+  flex-direction: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 10px;
+}
+.list-box {
+  display: flex;
+  flex-grow: 2;
+  flex-direction: column;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list-box-front {
+  display: flex;
+  flex-grow: 2;
+  flex-direction: column;
+}
+.orders-box {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+}
+
+
+.square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 5px;
+  
+}
+button,
+input,
+textarea,
+select {
+  margin: 10px;
+}
+textarea {
+  min-width: 250px;
+  min-height: 150px;
+  max-width: 500px;
+  max-height: 300px;
+}
+.kvc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+$color: rgb(20, 154, 212);
+.btn {
+  display: inline-block;
+  padding: .3rem 0.7rem;
+  margin: 5px;
+  border-radius: 10rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: .6rem;
+  letter-spacing: .15rem;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  cursor: pointer;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color;
+    border-radius: 10rem;
+    z-index: -2;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: darken($color, 15%);
+    transition: all .3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  &:hover {
+    color: #fff;
+    &:before {
+      width: 100%;
+    }
+  }
+  
+}
+.create-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.item,
+.item-info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+$colorred: crimson;
+.red-button {
+  background-color: crimson;
+
+&:after{
+  background-color: $colorred;
+}
+&:before {
+  background-color: darken($colorred, 15%);
+}
+} 
+
+// Modal styling
+
+.modalBackground {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(200, 200, 200, 0.6);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.modalContainer {
+  min-width: 500px;
+  // height: 500px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+
+.modalContainer .title {
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.titleCloseBtn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.titleCloseBtn button {
+  background-color: #fff;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modalContainer .modalForm {
+  // flex: 50%;
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  font-size: 1.5rem;
+  text-align: center;
+  flex-wrap: wrap;
+}
+.modalForm .formGroup {
+  display: flex;
+  align-items: center;
+}
+.modalContainer .footer {
+  flex: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalButtons button {
+  
+  width: 150px;
+  height: 45px;
+  margin: 30px 20px 0px 20px;
+  // border: none;
+  background-color: cornflowerblue;
+  color: white;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.modalButtons .red-button {
+  background-color: crimson;
+}
+.sorting-label {
+  margin-right: 8px;
+}
+.photo-input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  input {
+    margin: 10px 0 10px 0;
+  }
+}
+.color-kv {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.line-img {
+  max-width: 150px;
+}

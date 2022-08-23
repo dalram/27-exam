@@ -8,7 +8,7 @@ function List() {
     return (
         <div className="list-box-front">
         <div className="list-header">
-          <h2>List of Products</h2>
+          <h2>Servisu sarasas</h2>
         </div>
         <div className="card-body">
           <ul className="list-group">

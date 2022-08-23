@@ -54,8 +54,7 @@ function Front() {
     >
       <Nav/>
       <div className="container">
-        <List></List>
-        <OrdersList />
+        <h1>Meistru sarasas</h1>
       </div>
       <OrderModal />
     </FrontContext.Provider>

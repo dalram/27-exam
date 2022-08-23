@@ -7,11 +7,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 In the project directory, you can run:
 
 Admin login: 
-Name: admin
+Name: admin;
 Password: 123
 
 Customer login:
-Name: customer
+Name: customer;
 Password: 123
 
 ## Available Scripts

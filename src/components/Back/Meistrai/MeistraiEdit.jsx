@@ -10,15 +10,16 @@ const MeistraiEdit = () => {
   const [numeris, setNumeris] = useState("+370");
   const [photoPrint, setPhotoPrint] = useState(null);
   const fileInput = useRef();
+  
 
   useEffect(() => {
     if (null === modalMeistras) {
       return;
     }
     setVardas(modalMeistras.name);
-    setServisas(modalMeistras.servisas);
+    setServisas(modalMeistras.servisas_id);
     setPhotoPrint(modalMeistras.photo);
-    setNumeris(modalMeistras.numeris)
+    setNumeris(modalMeistras.numeris);
     // fileInput.current = modalMeistras.photo;
   }, [modalMeistras]);
 
@@ -26,7 +27,7 @@ const MeistraiEdit = () => {
     const data = {
       id: modalMeistras.id,
       vardas,
-      serviso_id: parseInt(servisas) ? parseInt(servisas) : null,
+      servisas_id: parseInt(servisas) ? parseInt(servisas) : null,
       numeris: numeris === "+370" ? "" : numeris,
       photo: photoPrint,
     };

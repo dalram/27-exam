@@ -126,7 +126,6 @@ function Back({ show }) {
         setLastUpdate(Date.now());
       });
   }, [editMeistras]);
-  
   return (
     <BackContext.Provider
       value={{

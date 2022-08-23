@@ -35,18 +35,18 @@ function App() {
           }
         />
         <Route
-          path="/admin/orders"
+          path="/admin/meistrai"
           element={
             <RequireAuth role="admin">
-              <Back show="orders" />
+              <Back show="meistrai" />
             </RequireAuth>
           }
         />
         <Route
-          path="/admin/products"
+          path="/admin/servisai"
           element={
             <RequireAuth role="admin">
-              <Back show="products" />
+              <Back show="servisai" />
             </RequireAuth>
           }
         />

@@ -3,18 +3,18 @@ import BackContext from "../BackContext";
 // import getBase64 from "../../../Functions/getBase64";
 
 function Create() {
-  const { setCreateData } = useContext(BackContext);
+  const { setCreateServisa } = useContext(BackContext);
   const [pavadinimas, setPavadinimas] = useState("");
   const [adresas, setAdresas] = useState("");
   // const [photoPrint, setPhotoPrint] = useState(null);
   // const fileInput = useRef();
-  const addClothing = () => {
+  const addServisas = () => {
     const obj = {
       pavadinimas,
       adresas,
       // photo: photoPrint,
     };
-    setCreateData(obj);
+    setCreateServisa(obj);
     setPavadinimas("");
     setAdresas("");
     // setPhotoPrint(null);
@@ -70,7 +70,7 @@ function Create() {
             ) : null} */}
             <div>
               <div className="create-button">
-                <button className="btn addButton" onClick={addClothing}>
+                <button className="btn addButton" onClick={addServisas}>
                   Pridėti naują servisą
                 </button>
               </div>

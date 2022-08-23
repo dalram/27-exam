@@ -19,21 +19,21 @@ function Nav() {
               </NavLink>
               <NavLink
                 className="nav-link"
-                to="/admin/orders"
+                to="/admin/meistrai"
                 style={({ isActive }) =>
                   isActive ? { color: "crimson" } : null
                 }
               >
-                Orders
+                Meistrai
               </NavLink>
               <NavLink
                 className="nav-link"
-                to="/admin/products"
+                to="/admin/servisai"
                 style={({ isActive }) =>
                   isActive ? { color: "crimson" } : null
                 }
               >
-                Products
+                Servisai
               </NavLink>
               <NavLink
                 className="nav-link"

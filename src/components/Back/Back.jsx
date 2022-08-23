@@ -2,39 +2,42 @@ import { useEffect } from "react";
 import { useState } from "react";
 import BackContext from "./BackContext";
 import Nav from "./Nav";
-import Orders from "./Meistrai/Orders";
-import ProductsCrud from "./Servisai/Crud";
+import Meistrai from "./Meistrai/Crud";
+import ServisaiCrud from "./Servisai/Crud";
 import axios from 'axios';
 import { authConfig } from "../../Functions/auth";
 
 function Back({ show }) {
   const [lastUpdate, setLastUpdate] = useState(Date.now());
-  const [createData, setCreateData] = useState(null);
+  const [createServisa, setCreateServisa] = useState(null);
   const [servisai, setServisai] = useState(null);
   const [deleteServisa, setDeleteServisa] = useState(null);
   const [editServisa, setEditServisa] = useState(null);
   const [modalServisas, setModalServisas] = useState(null);
-  // Orders
-  // const [orders, setOrders] = useState(null);
-  // const [handleOrder, setHandleOrder] = useState(null);
+  // Meistrai
+  const [createMeistra, setCreateMeistra] = useState(null);
+  const [meistrai, setMeistrai] = useState(null);
+  const [deleteMeistras, setDeleteMeistras] = useState(null);
+  const [editMeistras, setEditMeistras] = useState(null);
+  const [modalMeistras, setModalMeistras] = useState(null);
 
 // Create
   useEffect(() => {
-    if (createData === null) {
+    if (createServisa === null) {
       return;
     }
-    axios.post("http://localhost:3003/admin/servisai", createData, authConfig()).then((res) => {
+    axios.post("http://localhost:3003/admin/servisai", createServisa, authConfig()).then((res) => {
       setLastUpdate(Date.now());
     });
-  }, [createData]);
-// Read products
+  }, [createServisa]);
+// Read servisai
 useEffect(() => {
   axios.get("http://localhost:3003/admin/servisai", authConfig()).then((res) => {
     setServisai(res.data);
   });
 }, [lastUpdate]);
 
-// delete product
+// delete servisa
 useEffect(() => {
   if (null === deleteServisa) {
     return;
@@ -44,7 +47,7 @@ useEffect(() => {
   })
 }, [deleteServisa]);
 
-// edit product
+// edit servisa
 
 useEffect(() => {
   if (null === editServisa) {
@@ -55,13 +58,15 @@ useEffect(() => {
   });
 }, [editServisa]);
 
-// Read orders
-// const {data} = props; Tai yra Destrukturizavimas objekto!!!
-// useEffect(() => {
-//   axios.get("http://localhost:3003/admin/orders", authConfig()).then((res) => {
-//     setOrders(res.data);
-//   });
-// }, [lastUpdate]);
+// Create meistra
+useEffect(() => {
+  if (createMeistra === null) {
+    return;
+  }
+  axios.post("http://localhost:3003/admin/meistrai", createMeistra, authConfig()).then((res) => {
+    setLastUpdate(Date.now());
+  });
+}, [createMeistra]);
 
 // // Edit, confirm or cancel order
 
@@ -76,30 +81,29 @@ useEffect(() => {
 
   return (
     <BackContext.Provider value={{
-      setCreateData,
+      setCreateServisa,
       servisai,
       setDeleteServisa,
       setEditServisa,
       setModalServisas,
       editServisa,
       modalServisas,
-      // orders,
-      // setHandleOrder
+      setCreateMeistra
     }}>
       {show === "admin" ? (
         <>
           <Nav />
           <h1>Sveiki atvykę į administacinę sritį, naudokite navigacija!</h1>
         </>
-      ) : show === "orders" ? (
+      ) : show === "meistrai" ? (
         <>
           <Nav />
-          <Orders />
+          <Meistrai />
         </>
       ) : (
         <>
           <Nav />
-          <ProductsCrud />
+          <ServisaiCrud />
         </>
       )}
     </BackContext.Provider>

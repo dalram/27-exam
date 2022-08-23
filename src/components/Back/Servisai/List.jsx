@@ -7,7 +7,7 @@ function List() {
     return (
         <div className="list-box">
         <div className="list-header">
-          <h2>List of Products</h2>
+          <h2>Servisų sąrašas</h2>
         </div>
         <div className="card-body">
           <ul className="list-group">

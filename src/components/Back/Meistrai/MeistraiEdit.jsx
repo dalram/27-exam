@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import BackContext from "../BackContext";
 // import getBase64 from "../../../Functions/getBase64";
 
-const Edit = () => {
+const MeistraiEdit = () => {
   const { setEditServisa, setModalServisas, modalServisas } =
     useContext(BackContext);
   const [pavadinimas, setPavadinimas] = useState('');
@@ -108,4 +108,4 @@ const Edit = () => {
   );
 };
 
-export default Edit;
+export default MeistraiEdit;

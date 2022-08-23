@@ -22,3 +22,16 @@ function MeistraiList() {
 }
 
 export default MeistraiList;
+
+
+// app.get("/admin/meistrai", (req, res) => {
+//   const sql = `
+//     SELECT
+//     id, name, adresas, photo, numeris, rating, serviso_id
+//     FROM meistrai
+//     `;
+//   con.query(sql, (err, result) => {
+//     if (err) throw err;
+//     res.send(result);
+//   });
+// });

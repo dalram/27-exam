@@ -6,7 +6,6 @@ function Create() {
   const { setCreateMeistra, servisai } = useContext(BackContext);
   const [vardas, setVardas] = useState("");
   const [servisas, setServisas] = useState(0);
-  const [adresas, setAdresas] = useState("");
   const [numeris, setNumeris] = useState("+370");
   const [photoPrint, setPhotoPrint] = useState(null);
   const fileInput = useRef();
@@ -14,14 +13,12 @@ function Create() {
     const obj = {
       vardas,
       serviso_id: parseInt(servisas) ? parseInt(servisas) : null,
-      adresas,
       numeris: numeris === '+370' ? "" : numeris,
       photo: photoPrint,
     };
     setCreateMeistra(obj);
     setServisas(0);
     setVardas("");
-    setAdresas("");
     setNumeris("+370");
     setPhotoPrint(null);
     fileInput.current.value = null;
@@ -85,16 +82,6 @@ function Create() {
                 <img src={photoPrint} alt="nice" />
               </div>
             ) : null}
-            <div className="formGroup">
-              <span>Meistro adresas</span>
-              <input
-                type="text"
-                value={adresas}
-                onChange={(e) => {
-                  setAdresas(e.target.value);
-                }}
-              />
-            </div>
             <div className="formGroup">
               <span>Meistro numeris</span>
               <input

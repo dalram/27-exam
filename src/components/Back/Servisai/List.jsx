@@ -6,7 +6,7 @@ function List() {
     const { servisai } = useContext(BackContext);
     return (
         <div className="list-box">
-        <div className="list-header">
+        <div>
           <h2>Servisų sąrašas</h2>
         </div>
         <div className="card-body">

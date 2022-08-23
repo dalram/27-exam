@@ -245,6 +245,9 @@ button.with-loader:disabled {
   flex-grow: 2;
   flex-direction: column;
 }
+.list-header {
+  text-align: center;
+}
 .container {
   display: flex;
   flex-wrap: wrap;

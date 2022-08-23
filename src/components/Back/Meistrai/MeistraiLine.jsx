@@ -2,13 +2,13 @@ import { useContext } from "react";
 import BackContext from "../BackContext";
 
 const MeistraiLine = ({ meistras }) => {
-  const { setDeleteServisa, setModalServisas } = useContext(BackContext);
+  const { setDeleteMeistras, setModalMeistras } = useContext(BackContext);
   const handleDelete = () => {
-    setDeleteServisa(meistras);
+    setDeleteMeistras(meistras);
   };
 
   const handleEdit = () => {
-    setModalServisas(meistras);
+    setModalMeistras(meistras);
   };
 
   return (
@@ -16,9 +16,14 @@ const MeistraiLine = ({ meistras }) => {
       <li className="margin-bot">
         <div className="item">
           <div className="item-info">
-            <p>Vardas: {meistras.pavadinimas}</p>
-            <p>Serviso adresas: {meistras.adresas}</p>
+            <p>Vardas: {meistras.name}</p>
+            <p>Dirba servise: {meistras.servisas}</p>
+            <p>Tel.nr: {meistras.numeris ? meistras.numeris : '-'}</p>
+            <p>Įvertinimas: {meistras.rating ? meistras.rating : 'Neturi įvertinimo'}</p>
           </div>
+          {meistras.photo === null ? null : (
+            <img src={meistras.photo} alt={meistras.name} className="line-img" />
+          )}
           <div className="item-buttons">
             <button className="btn" onClick={handleEdit}>
               Edit

@@ -4,7 +4,7 @@ import BackContext from "./BackContext";
 import Nav from "./Nav";
 import Meistrai from "./Meistrai/Crud";
 import ServisaiCrud from "./Servisai/Crud";
-import axios from 'axios';
+import axios from "axios";
 import { authConfig } from "../../Functions/auth";
 
 function Back({ show }) {
@@ -21,75 +21,131 @@ function Back({ show }) {
   const [editMeistras, setEditMeistras] = useState(null);
   const [modalMeistras, setModalMeistras] = useState(null);
 
-// Create
+  // Create
   useEffect(() => {
     if (createServisa === null) {
       return;
     }
-    axios.post("http://localhost:3003/admin/servisai", createServisa, authConfig()).then((res) => {
-      setLastUpdate(Date.now());
-    });
+    axios
+      .post("http://localhost:3003/admin/servisai", createServisa, authConfig())
+      .then((res) => {
+        setLastUpdate(Date.now());
+      });
   }, [createServisa]);
-// Read servisai
-useEffect(() => {
-  axios.get("http://localhost:3003/admin/servisai", authConfig()).then((res) => {
-    setServisai(res.data);
-  });
-}, [lastUpdate]);
+  // Read servisai
+  useEffect(() => {
+    axios
+      .get("http://localhost:3003/admin/servisai", authConfig())
+      .then((res) => {
+        setServisai(res.data);
+      });
+  }, [lastUpdate]);
 
-// delete servisa
-useEffect(() => {
-  if (null === deleteServisa) {
-    return;
-  }
-  axios.delete("http://localhost:3003/admin/servisai/" + deleteServisa.id, authConfig()).then((res) => {
-    setLastUpdate(Date.now());
-  })
-}, [deleteServisa]);
+  // delete servisa
+  useEffect(() => {
+    if (null === deleteServisa) {
+      return;
+    }
+    axios
+      .delete(
+        "http://localhost:3003/admin/servisai/" + deleteServisa.id,
+        authConfig()
+      )
+      .then((res) => {
+        setLastUpdate(Date.now());
+      });
+  }, [deleteServisa]);
 
-// edit servisa
+  // edit servisa
 
-useEffect(() => {
-  if (null === editServisa) {
-    return;
-  }
-  axios.put("http://localhost:3003/admin/servisai/" + editServisa.id, editServisa, authConfig()).then((res) => {
-    setLastUpdate(Date.now());
-  });
-}, [editServisa]);
+  useEffect(() => {
+    if (null === editServisa) {
+      return;
+    }
+    axios
+      .put(
+        "http://localhost:3003/admin/servisai/" + editServisa.id,
+        editServisa,
+        authConfig()
+      )
+      .then((res) => {
+        setLastUpdate(Date.now());
+      });
+  }, [editServisa]);
 
-// Create meistra
-useEffect(() => {
-  if (createMeistra === null) {
-    return;
-  }
-  axios.post("http://localhost:3003/admin/meistrai", createMeistra, authConfig()).then((res) => {
-    setLastUpdate(Date.now());
-  });
-}, [createMeistra]);
+  // Create meistra
+  useEffect(() => {
+    if (createMeistra === null) {
+      return;
+    }
+    axios
+      .post("http://localhost:3003/admin/meistrai", createMeistra, authConfig())
+      .then((res) => {
+        setLastUpdate(Date.now());
+      });
+  }, [createMeistra]);
 
-// // Edit, confirm or cancel order
+  // Read meistrai
+  useEffect(() => {
+    axios
+      .get("http://localhost:3003/admin/meistrai", authConfig())
+      .then((res) => {
+        setMeistrai(res.data);
+      });
+  }, [lastUpdate]);
 
-// useEffect(() => {
-//   if (null === handleOrder) {
-//     return;
-//   }
-//   axios.put("http://localhost:3003/admin/orders/" + handleOrder.id, handleOrder, authConfig()).then((res) => {
-//     setLastUpdate(Date.now());
-//   });
-// }, [handleOrder]);
+  // delete meistra
+  useEffect(() => {
+    if (null === deleteMeistras) {
+      return;
+    }
+    axios
+      .delete(
+        "http://localhost:3003/admin/meistrai/" + deleteMeistras.id,
+        authConfig()
+      )
+      .then((res) => {
+        setLastUpdate(Date.now());
+      });
+  }, [deleteMeistras]);
 
+
+  // edit meistra
+
+  useEffect(() => {
+    if (null === editMeistras) {
+      return;
+    }
+    axios
+      .put(
+        "http://localhost:3003/admin/meistrai/" + editMeistras.id,
+        editMeistras,
+        authConfig()
+      )
+      .then((res) => {
+        setLastUpdate(Date.now());
+      });
+  }, [editMeistras]);
+  
   return (
-    <BackContext.Provider value={{
-      setCreateServisa,
-      servisai,
-      setDeleteServisa,
-      setEditServisa,
-      setModalServisas,
-      editServisa,
-      modalServisas,
-      setCreateMeistra
-    }}>
+    <BackContext.Provider
+      value={{
+        setCreateServisa,
+        servisai,
+        setDeleteServisa,
+        setEditServisa,
+        setModalServisas,
+        editServisa,
+        modalServisas,
+        setCreateMeistra,
+        meistrai,
+        setDeleteMeistras,
+        editMeistras,
+        setEditMeistras,
+        modalMeistras,
+        setModalMeistras,
+      }}
+    >
       {show === "admin" ? (
         <>
           <Nav />
